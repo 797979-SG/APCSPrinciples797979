@@ -1,4 +1,4 @@
-class Square{
+class Square{1
   constructor(x2,y2,dx2,dy2){
     this.x2 = x2;
     this.y2 = y2;
