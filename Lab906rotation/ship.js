@@ -18,7 +18,7 @@ class Ship{
     if(this.loc.x < 0) this.loc.x = width;
     if(this.loc.x > width) this.loc.x = 0;
     if(this.loc.y < 0) this.loc.y = height;
-    if(this.loc.y < 0) this.loc.y = width;
+    if(this.loc.y > height) this.loc.y = 0;
 
   }
 
@@ -36,4 +36,4 @@ class Ship{
       triangle(5,-8,5,8,-8)
     pop()
   }
-}//  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  end Ball
+}//  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  end Ship
