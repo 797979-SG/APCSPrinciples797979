@@ -1,4 +1,4 @@
-class Balls{
+class Ball{
   constructor(x, y, dx, dy, id){
     this.loc = createVector(x,y);
     this.vel = createVector(dx,dy);
@@ -35,27 +35,14 @@ class Balls{
 }
 
   update(){
-    var distToMainBall2;
-    var distToMainBall;
-    if(this.id >= 0){
-      distToMainBall = this.loc.dist(attraction.loc);
-      distToMainBall2 = this.loc.dist(repulsion.loc);
-      if(distToMainBall < 250){
-        //attraction
-      this.acc = p5.Vector.sub(attraction.loc, this.loc);
-      this.acc.normalize();
-      this.acc.mult(0.1);
-    }
-    if(distToMainBall2 < 150){
-      //repulsion
-      this.acc = p5.Vector.sub(this.loc, repulsion.loc);
-      this.acc.normalize();
-      this.acc.mult(0.5);
-    }
-    }
     this.vel.add(this.acc)
     this.loc.add(this.vel)
     this.vel.limit(2)
+  }
+  isColliding(){
+    if(this.loc.x > paddle.loc.x &&this.loc.x < paddle.loc.x + this.w &&this.loc.y > paddle.loc.y  &&this.loc.y < paddle.loc.y + this.h){
+
+    }
   }
 
   render(){

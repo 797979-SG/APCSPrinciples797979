@@ -1,7 +1,7 @@
 var balls = []
-var paddle;
+var paddle
 var score = 0
-var gameState = 1
+var gameState = 2
 //  The setup function function is called once when your program begins
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -14,27 +14,26 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
   if(gameState === 1){
-    startgame()
-  }elseif(gameState === 2){
-    playgame()
-  }elseif(gameState === 3){
-    endgame()
+      startgame()
+  }else if (gameState === 2){
+      playgame()
+  }else if (gameState === 3){
+      endgame()
   }
 }
 
-function loadBalls(n){
-  repulsion = new Balls(random(width),random(height),random(-50,50), random(-50,50), -1);
-  attraction = new Balls(random(width),random(height),random(-50,50), random(-50,50), -1);
+function loadObjects(n){
+  paddle = new Paddle(width/2, height-150, 150, 30)
   for(var i = 0; i < n; i++){
-    ships[i] = new Ships(random(width), random(height), random(-10, 10), random(-10, 10), i);
+    balls[i]= new Ball(random(width), random(0,420), random(-5,5),random(-5,5));
   }
 }
 
-function runBalls(){
-  attraction.run();
-  repulsion.run();
-  for(var i = 0; i < ships.length; i++){
-    ships[i].run();
-  }
+function runObjects(){
+  background(5,5,5,20);
+  runObjects();
+}
+
+function playgame(){
 
 }

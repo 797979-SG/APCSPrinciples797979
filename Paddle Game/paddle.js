@@ -15,7 +15,7 @@ class Paddle{
 
   render(){
     fill(this.clr);
-    rect(this.loc.x, this.loc.y, this.w, this.h);
+    rect(mouseX, 600, this.w, this.h);
   }
 
   update(){
