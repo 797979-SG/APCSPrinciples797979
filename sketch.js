@@ -31,9 +31,18 @@ function loadObjects(n){
 
 function runObjects(){
   background(5,5,5,20);
-  runObjects();
+  paddle.run()
+  for(var i = 0; i < balls.length; i++){
+    balls[i].run();
+  }
+
 }
-
+function startgame(){
+  textAlign(CENTER)
+  textSize(60)
+  fill(255)
+  text("PADDLE BALL", 400, 200)
+}
 function playgame(){
-
+  runObjects()
 }
