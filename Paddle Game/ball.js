@@ -40,8 +40,7 @@ class Ball{
     this.vel.limit(2)
   }
   isColliding(){
-    if(this.loc.x > paddle.loc.x &&this.loc.x < paddle.loc.x + this.w &&this.loc.y > paddle.loc.y  &&this.loc.y < paddle.loc.y + this.h){
-
+    if(this.loc.x > paddle.loc.x && this.loc.x < paddle.loc.x + this.w && this.loc.y > paddle.loc.y && this.loc.y < paddle.loc.y + this.h){
     }
   }
 

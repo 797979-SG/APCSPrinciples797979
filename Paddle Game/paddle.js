@@ -3,7 +3,7 @@ class Paddle{
     this.loc = createVector(x, y);
     this.w = 150
     this.h = 20
-    this.color = color(130);
+    this.clr = color(130);
     this.score = 0
   }
 
@@ -21,7 +21,7 @@ class Paddle{
   update(){
     var mouseLoc = createVector(mouseX, this.loc.y);
     this.loc = p5.Vector.lerp(this.loc, mouseLoc, .89);
-    textSize(100);
+    textSize(45);
     text("Score = " + this.score, 10, 30);
     fill(0)
   }
