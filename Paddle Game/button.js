@@ -1,4 +1,4 @@
-+class Button{
+class Button{
   constructor(id){
     this.x = 0
     this.y = 0
