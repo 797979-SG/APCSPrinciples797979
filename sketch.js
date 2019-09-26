@@ -10,6 +10,7 @@ function setup() {
   background(20, 20, 20);
   fill(200, 30, 150);
   loadObjects(5);
+  makeButtons(1)
 
 }
 
@@ -42,6 +43,9 @@ function runObjects(){
   for(var i = 0; i < balls.length; i++){
     balls[i].run();
   }
+function runMakeButtons(){
+  makeButtons.run()
+}
 
 }
 function startgame(){
@@ -49,9 +53,7 @@ function startgame(){
   textSize(60)
   fill(255)
   text("PADDLE BALL", 400, 200)
-  btnEasy.run();
-  btnMedium.run();
-  btnHard.run();
+
 }
 function playgame(){
   runObjects()

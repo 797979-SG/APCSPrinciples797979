@@ -13,11 +13,6 @@ class Paddle{
     this.update();
     this.checkEdges();
   }
-  health(){
-    textSize(45)
-    text("Health = " + this.health, 790, 30)
-    fill(0)
-  }
 
   render(){
     rectMode(CENTER)
@@ -30,6 +25,9 @@ class Paddle{
     this.loc = p5.Vector.lerp(this.loc, mouseLoc, .89);
     textSize(45);
     text("Score = " + this.score, 10, 30);
+    fill(0)
+    textSize(45)
+    text("Health = " + this.health, 790, 30)
     fill(0)
   }
   checkEdges(){
