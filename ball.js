@@ -14,26 +14,28 @@ class Ball{
     this.update();
     this.render();
     this.isColliding();
+    this.remove();
   }
 
   checkEdges(){
-  if(this.loc.x < 0){
-    this.vel.x = -this.vel.x;
-    this.clr = color(random(255), random(255), random(255))
+    if(this.loc.x < 0){
+      this.vel.x = -this.vel.x;
+      this.clr = color(random(255), random(255), random(255))
+    }
+    if(this.loc.x > width){
+      this.vel.x = -this.vel.x;
+      this.clr = color(random(255), random(255), random(255))
+    }
+    if(this.loc.y < 0){
+      this.vel.y = -this.vel.y;
+      this.clr = color(random(255), random(255), random(255))
+    }
+    if(this.loc.x > paddle.loc.x - paddle.w/2 && this.loc.x < paddle.loc.x + paddle.w/2 && this.loc.y > paddle.loc.y - paddle.h/2 && this.loc.y < paddle.loc.y + paddle.h/2){
+      this.vel.y = -this.vel.y
+      score = score + 1
+    }
+
   }
-  if(this.loc.x > width){
-    this.vel.x = -this.vel.x;
-    this.clr = color(random(255), random(255), random(255))
-  }
-  if(this.loc.y < 0){
-    this.vel.y = -this.vel.y;
-    this.clr = color(random(255), random(255), random(255))
-  }
-  if(this.loc.y > height){
-    this.vel.y = -this.vel.y;
-    this.clr = color(random(255), random(255), random(255))
-  }
-}
 
   update(){
     this.vel.add(this.acc)
@@ -41,14 +43,23 @@ class Ball{
     this.vel.limit(2)
   }
   isColliding(){
-    if(this.loc.x > paddle.loc.x - paddle.w/2 && this.loc.x < paddle.loc.x + paddle.w/2 && this.loc.y > paddle.loc.y - paddle.h/2 && this.loc.y < paddle.loc.y + paddle.h/2){
-      this.vel.y = -this.vel.y
+    if(this.loc.y > height){
+      return true
     }
   }
 
   render(){
     fill(this.clr);
     ellipse(this.loc.x, this.loc.y, this.w, this.w);
+  }
+
+  remove(){
+    for(var i = balls.length - 1; i>=0; i--){
+      if(balls[i].isColliding()){
+        balls.splice(i, 1);
+        paddle.health = paddle.health - 1
+      }
+    }
   }
 
 }//end ball

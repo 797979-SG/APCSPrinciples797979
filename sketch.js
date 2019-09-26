@@ -56,3 +56,9 @@ function startgame(){
 function playgame(){
   runObjects()
 }
+function endgame(){
+  textAlign(CENTER)
+  textSize(60)
+  fill(255)
+  text("YOU LOSE", 400, 200)
+}

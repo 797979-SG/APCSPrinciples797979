@@ -43,6 +43,13 @@ class Button{
       this.clr = color(255,0,0)
       this.text = "Hard"
       this.gotostate = 2
+    }else if (this.id === 3) {
+      this.y = 600
+      this.x = 250
+      this.clr = color(255)
+      textAlign(CENTER)
+      this.text = "Instructions"
+      this.gotostate = 4
     }
   }
   mouseClicked(){

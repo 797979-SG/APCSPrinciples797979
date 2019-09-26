@@ -5,12 +5,18 @@ class Paddle{
     this.h = 20
     this.clr = color(130);
     this.score = 0
+    this.health = 10
   }
 
   run(){
     this.render();
     this.update();
     this.checkEdges();
+  }
+  health(){
+    textSize(45)
+    text("Health = " + this.health, 790, 30)
+    fill(0)
   }
 
   render(){
