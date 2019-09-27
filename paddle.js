@@ -15,7 +15,7 @@ class Paddle{
   }
 
   render(){
-    rectMode(CENTER)
+    rectMode(CORNER)
     fill(this.clr);
     rect(mouseX, 600, this.w, this.h);
   }
@@ -23,12 +23,14 @@ class Paddle{
   update(){
     var mouseLoc = createVector(mouseX, this.loc.y);
     this.loc = p5.Vector.lerp(this.loc, mouseLoc, .89);
-    textSize(45);
+    textAlign(LEFT);
+    textSize(32);
+    fill(255)
     text("Score = " + this.score, 10, 30);
-    fill(0)
-    textSize(45)
-    text("Health = " + this.health, 790, 30)
-    fill(0)
+    textAlign(RIGHT)
+    textSize(32)
+    fill(255)
+    text("Health = " + this.health, 800, 30)
   }
   checkEdges(){
     if(this.loc.x < -1){
