@@ -9,6 +9,7 @@ class Button{
     this.id = id;
     this.text = "Smash"
     this.gotostate = 2
+    this.gameDifficulty = 1
   }
   run(){
     this.idCheck();
@@ -27,22 +28,25 @@ class Button{
   idCheck(){
     if(this.id === 0){
       this.y = 500
-      this.x = 100
+      this.x = 200
       this.clr = color(0,255,0)
       this.text = "Easy"
       this.gotostate = 2
+      this.gameDifficulty = 1
     }else if (this.id === 1) {
       this.y = 500
-      this.x = 200
+      this.x = 400
       this.clr = color(244,232,105)
       this.text = "Medium"
       this.gotostate = 2
+      this.gameDifficulty = 2
     }else if (this.id === 2) {
       this.y = 500
-      this.x = 300
+      this.x = 600
       this.clr = color(255,0,0)
       this.text = "Hard"
       this.gotostate = 2
+      this.gameDifficulty = 3
     }
   }
   mouseClicked(){

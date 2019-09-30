@@ -13,40 +13,59 @@ class Ball{
     this.checkEdges();
     this.update();
     this.render();
+    this.isColliding();
+    this.remove();
   }
 
   checkEdges(){
-  if(this.loc.x < 0){
-    this.vel.x = -this.vel.x;
-    this.clr = color(random(255), random(255), random(255))
+    if(this.loc.x < 0){
+      this.vel.x = -this.vel.x;
+      this.clr = color(random(255), random(255), random(255))
+    }
+    if(this.loc.x > width){
+      this.vel.x = -this.vel.x;
+      this.clr = color(random(255), random(255), random(255))
+    }
+    if(this.loc.y < 0){
+      this.vel.y = -this.vel.y;
+      this.clr = color(random(255), random(255), random(255))
+    }
+    if(this.loc.x > paddle.loc.x && this.loc.x < paddle.loc.x + paddle.w && this.loc.y > paddle.loc.y && this.loc.y < paddle.loc.y + paddle.h){
+      this.vel.y = -this.vel.y
+      score = score + 1
+    }
+
   }
-  if(this.loc.x > width){
-    this.vel.x = -this.vel.x;
-    this.clr = color(random(255), random(255), random(255))
-  }
-  if(this.loc.y < 0){
-    this.vel.y = -this.vel.y;
-    this.clr = color(random(255), random(255), random(255))
-  }
-  if(this.loc.y > height){
-    this.vel.y = -this.vel.y;
-    this.clr = color(random(255), random(255), random(255))
-  }
-}
 
   update(){
     this.vel.add(this.acc)
     this.loc.add(this.vel)
-    this.vel.limit(2)
   }
+
+
   isColliding(){
-    if(this.loc.x > paddle.loc.x && this.loc.x < paddle.loc.x + this.w && this.loc.y > paddle.loc.y && this.loc.y < paddle.loc.y + this.h){
+    if( this.loc.x > paddle.loc.x && this.loc.x < paddle.loc.x + paddle.w && this.loc.y > paddle.loc.y && this.loc.y < paddle.loc.y + paddle.h){
+        console.log("true");
+        return true;
+      }else{
+        console.log("false");
+        return false;
+      }
+
     }
-  }
 
-  render(){
-    fill(this.clr);
-    ellipse(this.loc.x, this.loc.y, this.w, this.w);
-  }
+    render(){
+      fill(this.clr);
+      ellipse(this.loc.x, this.loc.y, this.w, this.w);
+    }
 
-}//end ball
+    remove(){
+      for(var i = balls.length - 1; i>=0; i--){
+        if(balls[i].isColliding()){
+          balls.splice(i, 1);
+          paddle.health = paddle.health - 1
+        }
+      }
+    }
+
+  }//end ball
