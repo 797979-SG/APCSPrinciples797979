@@ -13,8 +13,7 @@ class Ball{
     this.checkEdges();
     this.update();
     this.render();
-    this.isColliding();
-    this.remove();
+    //this.isColliding();
   }
 
   checkEdges(){
@@ -48,7 +47,7 @@ class Ball{
         console.log("true");
         return true;
       }else{
-        console.log("false");
+        //console.log("false");
         return false;
       }
 
@@ -57,15 +56,6 @@ class Ball{
     render(){
       fill(this.clr);
       ellipse(this.loc.x, this.loc.y, this.w, this.w);
-    }
-
-    remove(){
-      for(var i = balls.length - 1; i>=0; i--){
-        if(balls[i].isColliding()){
-          balls.splice(i, 1);
-          paddle.health = paddle.health - 1
-        }
-      }
     }
 
   }//end ball

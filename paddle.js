@@ -22,7 +22,7 @@ class Paddle{
 
   update(){
     var mouseLoc = createVector(mouseX, this.loc.y);
-    this.loc = p5.Vector.lerp(this.loc, mouseLoc, .89);
+    this.loc = p5.Vector.lerp(this.loc, mouseLoc, .09);
     textAlign(LEFT);
     textSize(32);
     fill(255)
