@@ -30,7 +30,7 @@ class Ball{
       this.vel.y = -this.vel.y;
       this.clr = color(random(255), random(255), random(255))
     }
-    if(this.loc.y >= 600 && this.loc.y < 706 && this.loc.x > mouseX - paddle.w/2 && this.loc.x <= mouseX + paddle.w/2){
+    if(this.loc.y >= 600 && this.loc.y < 706 && this.loc.x > mouseX - paddle.w && this.loc.x <= mouseX + paddle.w){
       this.vel.y = -this.vel.y
       score = score + 1
     }

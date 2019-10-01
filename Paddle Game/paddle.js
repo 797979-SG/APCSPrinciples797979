@@ -1,7 +1,7 @@
 class Paddle{
   constructor(x,y){
     this.loc = createVector(x, y);
-    this.w = 150
+    this.w = 100
     this.h = 20
     this.clr = color(130);
     this.score = 0
