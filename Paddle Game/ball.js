@@ -44,7 +44,7 @@ class Ball{
 
 
   isColliding(){
-    if( this.loc.x > paddle.loc.x && this.loc.x < paddle.loc.x + paddle.w && this.loc.y > paddle.loc.y && this.loc.y < paddle.loc.y + paddle.h){
+    if( this.loc.y >= 600 && this.loc.y < 706 && this.loc.x > mouseX - paddle.w && this.loc.x <= mouseX + paddle.h){
         console.log("true");
         return true;
       }else{
