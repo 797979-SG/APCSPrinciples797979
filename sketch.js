@@ -41,7 +41,14 @@ function runObjects(){
     balls[i].run();
   }
 }
-
+function removeBalls(){
+  for(var i = balls.length - 1; i>=0; i--){
+    if(balls[i].isColliding()){
+      balls.splice(i, 1);
+      paddle.health = paddle.health - 1
+    }
+  }
+}
 function startgame(){
   textAlign(CENTER)
   textSize(60)
@@ -54,6 +61,7 @@ function startgame(){
 
 function playgame(){
   runObjects()
+  removeBalls()
 }
 function endgame(){
   textAlign(CENTER)
