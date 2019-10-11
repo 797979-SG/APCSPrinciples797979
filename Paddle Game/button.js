@@ -30,21 +30,24 @@ class Button{
       this.y = 500
       this.x = 200
       this.clr = color(0,255,0)
-      this.text = "Easy"
+      fill(255)
+      text("Easy",200,475)
       this.gotostate = 2
       this.gameDifficulty = 1
     }else if (this.id === 1) {
       this.y = 500
       this.x = 400
       this.clr = color(244,232,105)
-      this.text = "Medium"
+      fill(255)
+      text("Medium",400,475)
       this.gotostate = 2
       this.gameDifficulty = 2
     }else if (this.id === 2) {
       this.y = 500
       this.x = 600
       this.clr = color(255,0,0)
-      this.text = "Hard"
+      fill(255)
+      text("Hard",600,475)
       this.gotostate = 2
       this.gameDifficulty = 3
     }
