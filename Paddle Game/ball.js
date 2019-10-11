@@ -30,9 +30,14 @@ class Ball{
       this.vel.y = -this.vel.y;
       this.clr = color(random(255), random(255), random(255))
     }
+    if(this.loc.y > height){
+      this.vel.y = -this.vel.y;
+      this.clr = color(random(255), random(255), random(255))
+      paddle.health = paddle.health - 1
+    }
     if(this.loc.y >= 600 && this.loc.y < 706 && this.loc.x > mouseX - paddle.w && this.loc.x <= mouseX + paddle.w){
       this.vel.y = -this.vel.y
-      score = score + 1
+      paddle.score = paddle.score + 1
     }
 
   }
@@ -42,17 +47,16 @@ class Ball{
     this.loc.add(this.vel)
   }
 
-
-  isColliding(){
-    if( this.loc.y >= 600 && this.loc.y < 706 && this.loc.x > mouseX - paddle.w && this.loc.x <= mouseX + paddle.h){
-        console.log("true");
+  isColliding() {
+      if(this.loc.x > paddle.loc.x && this.loc.x < paddle.loc.x + paddle.w && this.loc.y > paddle.loc.y && this.loc.y < paddle.loc.y + paddle.h){
+        console.log("true")
         return true;
-      }else{
-        console.log("false");
+    }else{
+      console.log("false")
         return false;
-      }
-
     }
+
+  }
 
     render(){
       fill(this.clr);
@@ -63,7 +67,6 @@ class Ball{
       for(var i = balls.length - 1; i>=0; i--){
         if(balls[i].isColliding()){
           balls.splice(i, 1);
-          paddle.health = paddle.health - 1
         }
       }
     }

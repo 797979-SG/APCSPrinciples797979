@@ -1,6 +1,5 @@
 var balls = []
 var paddle
-var score = 0
 var gameState = 1
 var buttons = []
 var gameDifficulty = 1
@@ -17,11 +16,11 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
   if(gameState === 1){
-      startgame()
+      startgame()//Main Screen
   }else if (gameState === 2){
-      playgame()
+      playgame()//Play Screen
   }else if (gameState === 3){
-      endgame()
+      endgame()//Lose Screen
   }
 }
 
@@ -43,22 +42,34 @@ function runObjects(){
   }
 }
 
-function startgame(){
+function startgame(){//Buttons & Title to what game is
   textAlign(CENTER)
   textSize(60)
   fill(255)
   text("PADDLE BALL", 400, 200)
+  textAlign(CENTER)
+  textSize(20)
+  fill(255)
+  text("Instructions: Keep all the balls up do not allow them to fall or else you will loose health!!",400,250)
+  text("Survive until you can no longer keep up with the balls.",450,300)
   for(var i = 0; i < buttons.length; i++){
     buttons[i].run();
   }
 }
 
 function playgame(){
-  runObjects()
+  runObjects()//What function it is calling
 }
-function endgame(){
-  textAlign(CENTER)
-  textSize(60)
-  fill(255)
-  text("YOU LOSE", 400, 200)
+function endgame(){//End Screen
+  if(paddle.health = 0){
+    textAlign(CENTER)
+    textSize(60)
+    fill(255)
+    text("YOU LOSE", 400, 200)
+  }else if (paddle.score = 10) {
+    textAlign(CENTER)
+    textSize(60)
+    fill(255)
+    text("YOU WIN", 400,200)
+  }
 }
