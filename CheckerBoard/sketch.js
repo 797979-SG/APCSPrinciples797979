@@ -16,5 +16,5 @@ function setup() {
 
 
 function loadSquares(){
-  for(var )
+  for(rownum = 0, rownum <= this.height/100; rownum++)
 }
