@@ -1,8 +1,4 @@
-/*
-**Lab 1007 Ball
-**Checker Board
-**
-*/
+
 
 
 //  Global variables
@@ -11,13 +7,12 @@ function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(235);
-  for(var i = 0; i < 10000; i++){
+  for(var i = 0; i < 10; i++){
     list[i] = i
   }
-  shuffle(list, true)
+  //shuffle(list, true)
   console.log(list);
   bubbleSort();
-  //list = [11, 3, 1, 5, 6, 2, 4]
 }
 
 function bubbleSort(){
@@ -33,3 +28,4 @@ function bubbleSort(){
   				//  Swapping Code +++++++++
     }
   }
+}
