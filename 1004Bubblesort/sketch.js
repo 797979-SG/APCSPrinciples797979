@@ -10,7 +10,6 @@ function setup() {
   for(var i = 0; i < 10; i++){
     list[i] = i
   }
-  //shuffle(list, true)
   console.log(list);
   bubbleSort();
 }
