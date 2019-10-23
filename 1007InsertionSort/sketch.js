@@ -9,16 +9,16 @@ function setup() {
     list[i] = i
   }
   console.log(list);
-  bubbleSort();
+  insertionSort();
 }
-
-function bubbleSort(){
-  for(var j = 0; j < list.length; j++){
-    for(var i = 0; i < list.length; i++){
-      if(list[j+1] < list[j]){
+function insertionSort(){
+  var temp;
+  for(var  i = 1; i < list.length; i++){
+    for(var  j = i ; j > 0 ; j--){
+      if(list[j] < list[j-1]){
         temp = list[j];
-        list[j] = list[j+1];
-        list[j+1] = temp
+        list[j] = list[j-1];
+        list[j-1] = temp;
       }
     }
   }
