@@ -1,12 +1,15 @@
 class Bar{
-  constructor(id, num){
+  constructor(){
     this.loc = createVector(x,y);
-    this.num = num;
-    this.id = id;
-    this.h = num*10
+    this.h = height - this.loc.y
+    this.w = barWidth
   }
 }
 run(){
-  idcheck();
   render();
+}
+
+function render(){
+  fill(200,150,20)
+  rect(this.loc.x,this.loc.y,this.w,this.h);
 }
