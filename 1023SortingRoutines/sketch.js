@@ -22,8 +22,10 @@ function loadBars(num){
     bar[i] = new Bar(loc);
   }
 }
-function swap(){
-
+function swap(bars, a, b){
+  var temp = bars[a].loc.x
+    list[a].loc.x = list[b].loc.x
+    list[b].loc.x = temp
 }
 function render(){
   for(var i = 0; i < bars.length, i++)
