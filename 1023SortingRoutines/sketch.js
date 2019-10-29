@@ -8,7 +8,6 @@ function setup() {
   numBars = width/barWidth;
   loadBars(numBars);
   runBars();
-  myBubbleSort();
 }
 
 function draw(){
@@ -30,4 +29,16 @@ function swap(bars, a, b){
 function render(){
   for(var i = 0; i < bars.length, i++)
   bar[i].run();
+}
+function insertionSort(){
+  var temp;
+  for(var  i = 1; i < list.length; i++){
+    for(var  j = i ; j > 0 ; j--){
+      if(list[j] < list[j-1]){
+        temp = list[j];
+        list[j] = list[j-1];
+        list[j-1] = temp;
+      }
+    }
+  }
 }
