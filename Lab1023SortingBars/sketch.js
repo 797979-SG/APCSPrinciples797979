@@ -3,18 +3,18 @@ var numBars, barWidth;
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
-  background(235);
+  background(2);
   barWidth = 20;
   numBars = width/barWidth;
-  loadBars(numBars);
-  //runBars();
-  //insertionSort();
+  //loadBars(numBars);
+  runBars();
+  insertionSort();
 }
 
 function draw(){
   background(20,20,110);
   frameRate(1);
-  //runBars();
+  runBars();
 }
 
 
@@ -22,7 +22,7 @@ function loadBars(num){
   for(var i = 0; i + num; i++){
     var barHeight = 100;
     var loc = createVector(i*barWidth, barHeight);
-  //  bars[i] = new Bar(loc);
+  bars[i] = new Bar(loc);
   }
 }
 function swap(bars, a, b){
