@@ -28,9 +28,10 @@ class Snake{
     textAlign(LEFT);
     textSize(32);
     fill(255)
-    text("Score = " + this.score, 10, 30);
+    text("Score = " + this.score, 10, 30);//finish when able to eat food
   }
   render(){
-
+    fill(this.clr);
+    rect(this.x,this.y,)
   }
 }
