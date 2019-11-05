@@ -2,8 +2,8 @@ class Button{
   constructor(id){
     this.x = 0
     this.y = 0
-    this.w = 0
-    this.h = 0
+    this.w = 120
+    this.h = 50
     this.clr = color(255)
     this.textclr = color(0)
     this.id = id;
@@ -27,7 +27,7 @@ class Button{
     if(this.id === 0){
       this.y = 500
       this.x = 200
-      this.clr = color(0,255,0)
+      this.clr = color(255,0,0)
       fill(255)
       text("Start",200,475)
       this.gotostate = 1

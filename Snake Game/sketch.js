@@ -26,6 +26,9 @@ function startgame(){
   textSize(60)
   text("SNAKE GAME", 400,200)
   fill(255)
+  for(var i = 0; i < 3; i++){
+    button[i] = new Button(i)
+  }
   for(var i = 0; i < button.length; i++){
     button[i].run();
   }
