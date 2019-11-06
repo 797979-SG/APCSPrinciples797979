@@ -19,7 +19,7 @@ class Button{
     fill(this.clr)
     rect(this.x, this.y, this.w, this.h)
     textAlign(CENTER)
-    textSize(32)
+    textSize(20)
     fill(this.textClr)
     text(this.text, this.x, this.y, this.h/4)
   }
@@ -29,16 +29,16 @@ class Button{
       this.x = 200
       this.clr = color(255,0,0)
       fill(255)
-      text("Start",200,475)
+      text("Start",400,475)
       this.gotostate = 1
     }
   }
   mouseClicked(){
-    if(mouseX > this.x - this.w/2 && mouseX < this.x + this.w/2 && mouseY > this.y -this.h/2 && mouseY < this.y + this.h/2){
-    this.textClr = this.clr
-  } else {
-    this.textClr = color(0)
-  }
+  //   if(mouseX > this.x - this.w/2 && mouseX < this.x + this.w/2 && mouseY > this.y -this.h/2 && mouseY < this.y + this.h/2){
+  //   this.textClr = this.clr
+  // } else {
+  //   this.textClr = color(0)
+  // }
   if(mouseX > this.x - this.w/2 && mouseX < this.x + this.w/2 && mouseY > this.y -this.h/2 && mouseY < this.y + this.h/2 && mouseIsPressed){
     gameState = this.gotostate
 }}
