@@ -12,6 +12,13 @@ render(){
 }
 update(){
 if(snake.head.x === this.head.x &&
-  )
+   snake.loc.y === this.loc.y){
+     this.loc.x = Math.floor(random(0,79))*w;
+     this.loc.y = Math.floor(random(0,79))*w;
+   }
 }
+render(){
+  fill(random(255), random(255), random(255));
+  rect(this.loc.x, this.loc.y, w, w);
+  }
 }
