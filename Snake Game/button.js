@@ -15,7 +15,7 @@ class Button{
     this.mouseClicked();
   }
   render(){
-    rectmode(CENTER)
+    rectMode(CENTER)
     fill(this.clr)
     rect(this.x, this.y, this.w, this.h)
     textAlign(CENTER)
@@ -25,20 +25,20 @@ class Button{
   }
   idCheck(){
     if(this.id === 0){
-      this.y = 500
-      this.x = 200
+      this.y = 525
+      this.x = 400
       this.clr = color(255,0,0)
       fill(255)
       text("Start",400,475)
-      this.gotostate = 1
+      this.gotostate = 2
     }
   }
   mouseClicked(){
-  //   if(mouseX > this.x - this.w/2 && mouseX < this.x + this.w/2 && mouseY > this.y -this.h/2 && mouseY < this.y + this.h/2){
-  //   this.textClr = this.clr
-  // } else {
-  //   this.textClr = color(0)
-  // }
+    if(mouseX > this.x - this.w/2 && mouseX < this.x + this.w/2 && mouseY > this.y -this.h/2 && mouseY < this.y + this.h/2){
+    this.textClr = this.clr
+  } else {
+    this.textClr = color(0)
+  }
   if(mouseX > this.x - this.w/2 && mouseX < this.x + this.w/2 && mouseY > this.y -this.h/2 && mouseY < this.y + this.h/2 && mouseIsPressed){
     gameState = this.gotostate
 }}

@@ -35,3 +35,14 @@ class Snake{
     rect(this.x,this.y,)
   }
 }
+  entangle(){
+  if(this.loc.x >= 80){
+    gameState = 3
+  }else if (this.loc.x < 0) {
+    gameState = 3
+  }else if (this.loc.y >= 80) {
+    gameState = 3
+  }else if (this.loc.y < 0) {
+    gameState = 3
+  }
+}
