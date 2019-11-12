@@ -1,6 +1,6 @@
 class Snake{
   constructor(x,y,){
-    this.loc = createVector(400,400)
+    this.loc = createVector(width/w/2, height/w/2)
     this.vel = createVector(0,0)
     this.clr = color(random)
     this.body = [];
@@ -32,9 +32,9 @@ class Snake{
   }
   render(){
     fill(this.clr);
-    rect(this.x,this.y,)
+    rect(this.loc.x*w ,this.loc.y*w, w, w)
   }
-}
+
   entangle(){
   if(this.loc.x >= 80){
     gameState = 3
@@ -45,4 +45,5 @@ class Snake{
   }else if (this.loc.y < 0) {
     gameState = 3
   }
+}
 }

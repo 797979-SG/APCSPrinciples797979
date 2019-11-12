@@ -1,6 +1,7 @@
 class Food{
-  constructor(x,y){
+  constructor(x,y,w){
     this.loc = createVector(x,y)
+    this.w = w
   }
 run(){
   this.update()
@@ -17,8 +18,4 @@ if(snake.head.x === this.head.x &&
      this.loc.y = Math.floor(random(0,79))*w;
    }
 }
-render(){
-  fill(random(255), random(255), random(255));
-  rect(this.loc.x, this.loc.y, w, w);
-  }
 }
