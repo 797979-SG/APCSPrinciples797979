@@ -2,7 +2,7 @@
 // 	Date or version number
 //  This is a comment
 //  The setup function function is called once when your program begins
-var gameState = 2;
+var gameState = 1;
 var buttons = [];
 var snake
 var food
@@ -35,8 +35,8 @@ function loadObjects(){
 }
 function runObjects(){
   background(5,5,5,20);
-  // snake.run()
-  food.run();
+  // snake.run();
+  food.run()
 }
 
 function startgame(){

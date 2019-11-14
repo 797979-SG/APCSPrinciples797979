@@ -12,16 +12,16 @@ class Snake{
     this.render();
   }
   update(){
-    if(keycode === 37){//LEFT
+    if(keycode === LEFT_ARROW){//LEFT
       this.vel.x = -1
       this.vel.y = 0
-    }else if (keycode === 38){//UP
+    }else if (keycode === UP_ARROW){//UP
       this.vel.y = -1
       this.vel.x = 0
-    }else if (keycode === 40){//DOWN
+    }else if (keycode === DOWN_ARROW){//DOWN
       this.vel.y = -1
       this.vel.x = 0
-    }else if (keycode === 39){//RIGHT
+    }else if (keycode === RIGHT_ARROW){//RIGHT
       this.vel.x = 1
       this.vel.y = 0
     }
