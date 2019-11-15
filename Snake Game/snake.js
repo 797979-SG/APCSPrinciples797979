@@ -25,6 +25,17 @@ class Snake{
       this.vel.x = 1
       this.vel.y = 0
     }
+    if(this.length === 0){
+      this.prevloc.x = this.loc.x
+      this.prevloc.y = this.loc.y
+      this.prevvel.x = this.vel.x
+      this.prevvel.y = this.vel.y
+    }else if (this.length > 0) {
+      this.prevloc.x = this.body[this.length-1].loc.x
+      this.prevloc.y = this.body[this.length-1].loc.y
+      this.prevvel.x = this.body[this.length-1].vel.x
+      this.prevvel.y = this.body[this.length-1].vel.y
+    }
     textAlign(LEFT);
     textSize(32);
     fill(255)
