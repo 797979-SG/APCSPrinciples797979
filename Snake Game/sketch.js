@@ -7,11 +7,14 @@ var buttons = [];
 var snake
 var food
 var w = 25;
+var body = []
 
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(20,20,20);
+  snake = new Snake(width/2, height-150, 150, 30)
+  food = new Food(random(width), random(0,420), random(-5,5), random(-5,5));
 }
 
 
@@ -21,6 +24,7 @@ function draw() {
   fill(255)
   text("SNAKE GAME", 400,200);
 
+
   if(gameState === 1){
       startgame()//Main Screen
   }else if (gameState === 2){
@@ -29,13 +33,10 @@ function draw() {
       endgame()//Lose Screen
   }
 }
-function loadObjects(){
-  snake = new Snake(width/2, height-150, 150, 30)
-  food = new Food(random(width), random(0,420), random(-5,5), random(-5,5));
-}
+
 function runObjects(){
   background(5,5,5,20);
-  // snake.run();
+  snake.run()
   food.run()
 }
 
