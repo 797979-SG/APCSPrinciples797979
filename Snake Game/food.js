@@ -1,7 +1,8 @@
 class Food{
   constructor(x,y,w){
     this.loc = createVector(x,y)
-    this.w = w
+    this.clr = color(0,255,0)
+    this.w = 25
   }
 run(){
   this.update()

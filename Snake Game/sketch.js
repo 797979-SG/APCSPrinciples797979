@@ -2,7 +2,7 @@
 // 	Date or version number
 //  This is a comment
 //  The setup function function is called once when your program begins
-var gameState = 1;
+var gameState = 2;
 var buttons = [];
 var snake
 var food
@@ -13,8 +13,6 @@ function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(20,20,20);
-  snake = new Snake(width/2, height-150, 150, 30)
-  food = new Food(random(width), random(0,420), random(-5,5), random(-5,5));
 }
 
 
@@ -36,8 +34,8 @@ function draw() {
 
 function runObjects(){
   background(5,5,5,20);
-  snake.run()
-  food.run()
+  snake = new Snake(Math.floor(Math.random()*26)*26,Math.floor(Math.random()*26)*20,20)
+  food = new Food(Math.floor(Math.random()*26)*26,Math.floor(Math.random()*26)*20,20)
 }
 
 function startgame(){
@@ -45,7 +43,6 @@ function startgame(){
   textSize(60);
   fill(255)
   text("SNAKE GAME", 400,200);
-  loadObjects();
   console.log(gameState);
   for(var i = 0; i < 3; i++){
      buttons[i] = new Button(i)

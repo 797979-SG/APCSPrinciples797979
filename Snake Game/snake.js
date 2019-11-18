@@ -2,7 +2,7 @@ class Snake{
   constructor(x,y,){
     this.loc = createVector(width/w/2, height/w/2)
     this.vel = createVector(0,0)
-    this.clr = color(random)
+    this.clr = color(255,0,0)
     this.body = [];
     this.score = 0
   }
