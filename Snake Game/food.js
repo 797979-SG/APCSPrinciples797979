@@ -13,7 +13,7 @@ render(){
   rect(this.loc.x*w, this.loc.y*w,w,w)
 }
 update(){
-if(snake.head.x === this.head.x &&
+if(snake.loc.x === this.loc.x &&
    snake.loc.y === this.loc.y){
      this.loc.x = Math.floor(random(0,79))*w;
      this.loc.y = Math.floor(random(0,79))*w;

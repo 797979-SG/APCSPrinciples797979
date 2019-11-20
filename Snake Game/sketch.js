@@ -2,7 +2,7 @@
 // 	Date or version number
 //  This is a comment
 //  The setup function function is called once when your program begins
-var gameState = 1;
+var gameState = 2;
 var buttons = [];
 var snake
 var food
@@ -13,6 +13,7 @@ function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(20,20,20);
+  loadObjects();
 }
 
 
@@ -34,6 +35,11 @@ function draw() {
 
 function runObjects(){
   background(5,5,5,20);
+  snake.run();
+  food.run();
+}
+
+function loadObjects(){
   snake = new Snake(Math.floor(Math.random()*26)*26,Math.floor(Math.random()*26)*20,20)
   food = new Food(Math.floor(Math.random()*26)*26,Math.floor(Math.random()*26)*20,20)
 }
@@ -62,5 +68,17 @@ function endgame(){
     textSize(60)
     fill(255)
     text("YOU WIN", 400,200)
+  }
+}
+
+function keyPressed(){
+  if(keyCode === LEFT_ARROW){//LEFT
+    snake.vel = createVector(-1,0);
+  }else if (keyCode === UP_ARROW){//UP
+    snake.vel = createVector(0,-1);
+  }else if (keyCode === DOWN_ARROW){//DOWN
+    snake.vel = createVector(0,1);
+  }else if (keyCode === RIGHT_ARROW){//RIGHT
+    snake.vel = createVector(1,0);
   }
 }

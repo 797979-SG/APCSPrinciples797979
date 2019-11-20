@@ -12,19 +12,6 @@ class Snake{
     this.render();
   }
   update(){
-    if(keycode === LEFT_ARROW){//LEFT
-      this.vel.x = -1
-      this.vel.y = 0
-    }else if (keycode === UP_ARROW){//UP
-      this.vel.y = -1
-      this.vel.x = 0
-    }else if (keycode === DOWN_ARROW){//DOWN
-      this.vel.y = -1
-      this.vel.x = 0
-    }else if (keycode === RIGHT_ARROW){//RIGHT
-      this.vel.x = 1
-      this.vel.y = 0
-    }
     if(this.length === 0){
       this.prevloc.x = this.loc.x
       this.prevloc.y = this.loc.y
