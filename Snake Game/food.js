@@ -22,6 +22,7 @@ if(snake.loc.x === this.loc.x && snake.loc.y === this.loc.y){
      //relocate food
      this.loc.x = Math.floor(random(numCols));
      this.loc.y = Math.floor(random(numCols));
+     this.score = this.score + 1
      //push new segment
      snake.body.push(createVector( Math.floor(random(numCols)),
                                    Math.floor(random(numCols))));

@@ -65,11 +65,16 @@ function playgame(){
 }
 function endgame(){
   background(0)
-  if(this.score = 100){
+  if(this.score === 100){
     textAlign(CENTER)
     textSize(60)
     fill(255)
     text("YOU WIN", 400,200)
+  }else{
+    textAlign(CENTER)
+    textSize(60)
+    fill(255)
+    text("YOU LOSE", 400,200)
   }
 }
 
