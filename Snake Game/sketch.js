@@ -4,15 +4,16 @@
 //  The setup function function is called once when your program begins
 var gameState = 2;
 var buttons = [];
-var snake
-var food
-var w = 25;
-var body = []
+var snake;
+var food;
+var snakeWidth = 25;
+var body = [];
 
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(20,20,20);
+  frameRate(10);
   loadObjects();
 }
 
@@ -25,11 +26,11 @@ function draw() {
 
 
   if(gameState === 1){
-      startgame()//Main Screen
+    startgame()//Main Screen
   }else if (gameState === 2){
-      playgame()//Play Screen
+    playgame()//Play Screen
   }else if (gameState === 3){
-      endgame()//Lose Screen
+    endgame()//Lose Screen
   }
 }
 
@@ -40,8 +41,9 @@ function runObjects(){
 }
 
 function loadObjects(){
-  snake = new Snake(Math.floor(Math.random()*26)*26,Math.floor(Math.random()*26)*20,20)
-  food = new Food(Math.floor(Math.random()*26)*26,Math.floor(Math.random()*26)*20,20)
+  var numCol = width/snakeWidth;
+  snake = new Snake(Math.floor(Math.random()*numCol),Math.floor(Math.random()*numCol))
+  food = new Food(Math.floor(Math.random()*numCol),Math.floor(Math.random()*numCol),20)
 }
 
 function startgame(){
