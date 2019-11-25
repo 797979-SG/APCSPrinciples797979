@@ -2,7 +2,7 @@
 // 	Date or version number
 //  This is a comment
 //  The setup function function is called once when your program begins
-var gameState = 2;
+var gameState = 1;
 var buttons = [];
 var snake;
 var food;
@@ -65,7 +65,7 @@ function playgame(){
 }
 function endgame(){
   background(0)
-  if(this.score === 100){
+  if(this.body.length === 10){
     textAlign(CENTER)
     textSize(60)
     fill(255)

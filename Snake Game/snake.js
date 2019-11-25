@@ -4,15 +4,15 @@ class Snake{
     this.vel = createVector(0,0)
     this.clr = color(255,0,0)
     this.body = [];
-    this.score = 0
   }
   run(){
-    this.entangle();
     this.update();
+    this.entangle();
     this.render();
   }
   update(){
     //update body segments
+      console.log(this.body.length)
     for(var i = this.body.length-1; i > 0; i--){
       this.body[i].x = this.body[i-1].x;
       this.body[i].y = this.body[i-1].y;
@@ -40,7 +40,7 @@ class Snake{
     textAlign(LEFT);
     textSize(32);
     fill(255)
-    text("Score = " + this.score, 10, 30);//finish when able to eat food
+    text("Score = " + this.body.length, 10, 30);//finish when able to eat food
   }
   render(){
     for(var i = 0; i < this.body.length; i++){
@@ -61,6 +61,11 @@ class Snake{
       gameState = 3
     }else if (this.loc.y < 0) {
       gameState = 3
+    }
+    for(var i = 0; i < this.body.length; i++){
+      if(this.loc.x === this.body[i].x && this.loc.y === this.body[i].y){
+        gameState = 3
+      }
     }
   }
 }

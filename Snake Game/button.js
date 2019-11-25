@@ -18,10 +18,6 @@ class Button{
     rectMode(CENTER)
     fill(this.clr)
     rect(this.x, this.y, this.w, this.h)
-    textAlign(CENTER)
-    textSize(20)
-    fill(this.textClr)
-    text(this.text, this.x, this.y, this.h/4)
   }
   idCheck(){
     if(this.id === 0){
