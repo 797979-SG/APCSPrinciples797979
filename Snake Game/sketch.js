@@ -65,7 +65,7 @@ function playgame(){
 }
 function endgame(){
   background(0)
-  if(this.body.length === 10){
+  if(snake.body.length >= 25){
     textAlign(CENTER)
     textSize(60)
     fill(255)

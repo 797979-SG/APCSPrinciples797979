@@ -43,6 +43,7 @@ class Snake{
     text("Score = " + this.body.length, 10, 30);//finish when able to eat food
   }
   render(){
+    rectMode(CORNER)
     for(var i = 0; i < this.body.length; i++){
       fill(20,200,75);
       rect(this.body[i].x*snakeWidth,this.body[i].y*snakeWidth, snakeWidth, snakeWidth)
