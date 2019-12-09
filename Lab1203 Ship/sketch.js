@@ -1,3 +1,4 @@
+//Sebastian Gomez
 var ships = []
 var attraction, repulsion;
 //  The setup function function is called once when your program begins
